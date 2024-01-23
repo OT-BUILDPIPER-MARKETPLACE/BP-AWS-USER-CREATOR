@@ -21,6 +21,5 @@ COPY BP-BASE-SHELL-STEPS BP-BASE-SHELL-STEPS
 # Set execute permissions for the scripts
 RUN chmod +x build.sh BP-BASE-SHELL-STEPS/* 
 
-
 # Set the entry point for the Docker container
 ENTRYPOINT ["./build.sh"]
