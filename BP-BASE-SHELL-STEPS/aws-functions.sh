@@ -143,7 +143,7 @@ case "$PROGRAMMATIC_ACCESS" in
       echo "5. Access Key ID: $access_key_id"
       echo "6. Secret Access Key: $secret_access_key"
       echo 
-      echo "Kindly let us know if you face any issue in logging."
+      echo "Kindly let us know if you face any issue."
       echo
       echo "Thanks & Regards"
       echo "BuildPiper -Microservice DevOps Simplified"
@@ -160,7 +160,7 @@ case "$PROGRAMMATIC_ACCESS" in
       echo "3. USER Attached to GROUP: $GROUPNAME"
       echo "4. User_Arn: $user_arn"
       echo
-      echo "Kindly let us know if you face any issue in logging"
+      echo "Kindly let us know if you face any issue."
       echo "Thanks & Regards"
       echo
       echo "BuildPiper -Microservice DevOps Simplified"
