@@ -129,48 +129,45 @@ createIAMUserConsoleAccess() {
 # Function to create Credential file
 
 createCredentialFile() {
-  GREEN='\033[0;32m'  # ANSI escape code for green text
-  NC='\033[0m'       # ANSI escape code to reset color
+case "$PROGRAMMATIC_ACCESS" in
+  "yes")
+    {
+      echo "Hi $USERNAME, Please find your 'AWS Credentials' below:"
+      echo
+      echo "#### User Details ####"
+      echo
+      echo "1. USERNAME: $USERNAME"
+      echo "2. Default Password: $DEFAULT_PASSWORD"
+      echo "3. USER Attached to GROUP: $GROUPNAME"
+      echo "4. User_Arn: $user_arn"
+      echo "5. Access Key ID: $access_key_id"
+      echo "6. Secret Access Key: $secret_access_key"
+      echo 
+      echo "Kindly let us know if you face any issue in logging."
+      echo
+      echo "Thanks & Regards"
+      echo "BuildPiper -Microservice DevOps Simplified"
+    } >>Credential.txt
+    ;;
+  *)
+    {
+      echo "Hi $USERNAME, Please find your 'AWS Credentials' below:"
+      echo
+      echo "*#### User Details ####"
+      echo
+      echo "1. USERNAME: $USERNAME"
+      echo "2. Default Password: $DEFAULT_PASSWORD"
+      echo "3. USER Attached to GROUP: $GROUPNAME"
+      echo "4. User_Arn: $user_arn"
+      echo
+      echo "Kindly let us know if you face any issue in logging"
+      echo "Thanks & Regards"
+      echo
+      echo "BuildPiper -Microservice DevOps Simplified"
 
-  case "$PROGRAMMATIC_ACCESS" in
-    "yes")
-      {
-        echo "Hi $USERNAME, Please find your 'AWS Credentials' below:"
-        echo
-        echo "#### ${GREEN}User Details${NC} ####"
-        echo
-        echo "1. USERNAME: $USERNAME"
-        echo "2. Default Password: $DEFAULT_PASSWORD"
-        echo "3. USER Attached to GROUP: $GROUPNAME"
-        echo "4. User_Arn: $user_arn"
-        echo "5. Access Key ID: $access_key_id"
-        echo "6. Secret Access Key: $secret_access_key"
-        echo 
-        echo "Kindly let us know if you face any issue."
-        echo
-        echo -e "${GREEN}Thanks & Regards${NC}"
-        echo -e "${GREEN}BuildPiper -Microservice DevOps Simplified${NC}"
-      } >>Credential.txt
-      ;;
-    *)
-      {
-        echo "Hi $USERNAME, Please find your 'AWS Credentials' below:"
-        echo
-        echo "*#### ${GREEN}User Details${NC}####"
-        echo
-        echo "1. USERNAME: $USERNAME"
-        echo "2. Default Password: $DEFAULT_PASSWORD"
-        echo "3. USER Attached to GROUP: $GROUPNAME"
-        echo "4. User_Arn: $user_arn"
-        echo
-        echo "Kindly let us know if you face any issue."
-        echo -e "${GREEN}Thanks & Regards${NC}"
-        echo
-        echo -e "${GREEN}BuildPiper -Microservice DevOps Simplified${NC}"
-
-      } >>Credential.txt
-      ;;
-  esac
+    } >>Credential.txt
+    ;;
+esac
 }
 
 function postfix_conf() {
