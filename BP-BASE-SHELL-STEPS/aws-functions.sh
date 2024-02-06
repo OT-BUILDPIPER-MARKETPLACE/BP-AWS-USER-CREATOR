@@ -63,7 +63,7 @@ function createRole() {
 createIAMUser() {
   local user_output
   local user_arn
-  local keys_output
+  local keys_outputi
 
   # Check if the user already exists
   if aws iam get-user --user-name "$USERNAME" &>/dev/null; then
@@ -88,7 +88,7 @@ createIAMUser() {
 createCredentialFile
 
 # Sending Creds file to User
-  mail -s "$USERNAME AWS Credentials" $SENDER_MAIL_ID <Credential.txt
+  mail -s "$USERNAME AWS Credentials" $USER_MAIL_ID <Credential.txt
 }
 
 # Function to create IAM user with Console and Programmatic Access
